@@ -1,0 +1,12 @@
+.login {
+  text-align: center;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 10px;
+}
+
+.logout {
+  float: right;
+}
