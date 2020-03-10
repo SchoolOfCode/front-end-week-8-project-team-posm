@@ -1,0 +1,18 @@
+.logo {
+  width: 200px;
+  margin: 10px;
+}
+.userImg {
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+  width: 40px;
+}
+
+.logoutButton {
+  display: inline;
+  float: right;
+  margin-right: 10px;
+  border: 2px solid black;
+  padding: 2px;
+}
