@@ -4,12 +4,34 @@ import Login from "../Login/Login";
 import logo from "../../components/logo.svg";
 import littleLogo from "../Login/WMCA_logo.png";
 import "./index.css";
+
 import Dashboard from "../Dashboard/Dashboard";
+
 
 function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
+  const [providerData, setProviderData] = useState({
+    provider: "",
+    pkurn: "",
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    jobTitle: "",
+    bankName: "",
+    accountNumber: "",
+    sortCode1: "",
+    sortCode2: "",
+    sortCode3: ""
+  });
+
+  function takeInData(e) {
+    const { value, name } = e.target;
+    setProviderData({ ...providerData, [name]: value });
+    console.log(providerData);
+  }
 
   function handleUsername(event) {
     setUsername(event.target.value);
@@ -51,6 +73,7 @@ function App() {
         {loggedIn ? (
           <>
             <img src={littleLogo} className="userImg" alt="user profile" />
+
             <p className="logoutButton">Logout</p>
           </>
         ) : (
@@ -71,8 +94,26 @@ function App() {
                 Link={Link}
               />
             </Route>
-            <Route path="/register">
-              <p>Hello World</p>
+            <Route path="/register1">
+              <ProviderDetails
+                takeInData={takeInData}
+                providerData={providerData}
+              />
+            </Route>
+            <Route path="/register2">
+              <MainContact
+                takeInData={takeInData}
+                providerData={providerData}
+              />
+            </Route>
+            <Route path="/register3">
+              <PaymentProfile
+                takeInData={takeInData}
+                providerData={providerData}
+              />
+            </Route>
+            <Route path="/register4">
+              <ReviewSubmit providerData={providerData} />
             </Route>
             <Route path="/dashboard">
               <Dashboard />
