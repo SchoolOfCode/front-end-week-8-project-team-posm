@@ -4,6 +4,7 @@ import Login from "../Login/Login";
 import logo from "../../components/logo.svg";
 import littleLogo from "../Login/WMCA_logo.png";
 import "./index.css";
+import Dashboard from "../Dashboard/Dashboard";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -46,10 +47,10 @@ function App() {
   return (
     <div className="App">
       <header>
-        <img src={logo} className="logo" />
+        <img src={logo} className="logo" alt="WMCA logo" />
         {loggedIn ? (
           <>
-            <img src={littleLogo} className="userImg" />
+            <img src={littleLogo} className="userImg" alt="user profile" />
             <p className="logoutButton">Logout</p>
           </>
         ) : (
@@ -72,6 +73,9 @@ function App() {
             </Route>
             <Route path="/register">
               <p>Hello World</p>
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard />
             </Route>
           </div>
         </Switch>
