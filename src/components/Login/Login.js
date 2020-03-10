@@ -4,10 +4,13 @@ import "./Login.css";
 function Login({ handleUsername, handlePassword, submitLoginInfo, Link }) {
   return (
     <div className="login">
-      <input placeholder="username" onChange={handleUsername} /> <br />
-      <input type="password" placeholder="password" onChange={handlePassword} />
+      <h2>Employee Login</h2>
+      <input placeholder="Username" onChange={handleUsername} /> <br />
+      <input type="password" placeholder="Password" onChange={handlePassword} />
       <br />
-      <button onClick={submitLoginInfo}>Login</button>
+      <Link to="/dashboard">
+        <button onClick={submitLoginInfo}>Login</button>
+      </Link>
     </div>
   );
 }
