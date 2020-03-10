@@ -1,8 +1,83 @@
-import React from "react";
-import css from "./App.module.css";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Login from "../Login/Login";
+import logo from "../../components/logo.svg";
+import littleLogo from "../Login/WMCA_logo.png";
+import "./index.css";
 
 function App() {
-  return <div className={css.container}></div>;
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  function handleUsername(event) {
+    setUsername(event.target.value);
+  }
+  function handlePassword(event) {
+    setPassword(event.target.value);
+  }
+  function createUser() {
+    const userData = { username: username, password: password };
+    fetch(`http://localhost:5000/users`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(userData)
+    })
+      .then(response => response.json())
+      .then(data => setLoggedIn(data.success))
+      .catch(err => console.log(err));
+  }
+  function submitLoginInfo() {
+    const userData = { username: username, password: password };
+    fetch(`http://localhost:5000/users/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(userData)
+    })
+      .then(response => response.json())
+      .then(data => setLoggedIn(data.success), console.log(userData))
+      .catch(err => console.log(err));
+  }
+
+  return (
+    <div className="App">
+      <header>
+        <img src={logo} className="logo" />
+        {loggedIn ? (
+          <>
+            <img src={littleLogo} className="userImg" />
+            <p className="logoutButton">Logout</p>
+          </>
+        ) : (
+          ""
+        )}
+      </header>
+      <hr />
+
+      <Router>
+        <Switch>
+          <div>
+            <Route path="/login">
+              <Login
+                handleUsername={handleUsername}
+                handlePassword={handlePassword}
+                submitLoginInfo={submitLoginInfo}
+                createUser={createUser}
+                Link={Link}
+              />
+            </Route>
+            <Route path="/register">
+              <p>Hello World</p>
+            </Route>
+          </div>
+        </Switch>
+      </Router>
+    </div>
+  );
 }
 
 export default App;
