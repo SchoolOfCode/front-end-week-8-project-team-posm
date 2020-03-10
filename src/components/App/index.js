@@ -4,11 +4,35 @@ import Login from "../Login/Login";
 import logo from "../../components/logo.svg";
 import littleLogo from "../Login/WMCA_logo.png";
 import "./index.css";
+import ProviderDetails from "../Provider-Input-Form/ProviderDetails";
+import MainContact from "../Provider-Input-Form/MainContact";
+import PaymentProfile from "../Provider-Input-Form/PaymentProfile";
+import ReviewSubmit from "../Provider-Input-Form/ReviewSubmit";
 
 function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
+  const [providerData, setProviderData] = useState({
+    provider: "",
+    pkurn: "",
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    jobTitle: "",
+    bankName: "",
+    accountNumber: "",
+    sortCode1: "",
+    sortCode2: "",
+    sortCode3: ""
+  });
+
+  function takeInData(e) {
+    const { value, name } = e.target;
+    setProviderData({ ...providerData, [name]: value });
+    console.log(providerData);
+  }
 
   function handleUsername(event) {
     setUsername(event.target.value);
@@ -46,10 +70,10 @@ function App() {
   return (
     <div className="App">
       <header>
-        <img src={logo} className="logo" />
+        <img src={logo} alt="WMCA-logo" className="logo" />
         {loggedIn ? (
           <>
-            <img src={littleLogo} className="userImg" />
+            <img src={littleLogo} alt="WMCA-logo" className="userImg" />
             <p className="logoutButton">Logout</p>
           </>
         ) : (
@@ -70,8 +94,26 @@ function App() {
                 Link={Link}
               />
             </Route>
-            <Route path="/register">
-              <p>Hello World</p>
+            <Route path="/register1">
+              <ProviderDetails
+                takeInData={takeInData}
+                providerData={providerData}
+              />
+            </Route>
+            <Route path="/register2">
+              <MainContact
+                takeInData={takeInData}
+                providerData={providerData}
+              />
+            </Route>
+            <Route path="/register3">
+              <PaymentProfile
+                takeInData={takeInData}
+                providerData={providerData}
+              />
+            </Route>
+            <Route path="/register4">
+              <ReviewSubmit providerData={providerData} />
             </Route>
           </div>
         </Switch>

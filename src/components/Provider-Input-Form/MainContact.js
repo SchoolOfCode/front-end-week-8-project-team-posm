@@ -1,21 +1,61 @@
 import React from "react";
-import css from "./Provider-Input-Form.modules.css";
+import { Link } from "react-router-dom";
+import css from "./Provider-Input-Form.module.css";
 
-function ProviderDetails() {
+function ProviderDetails({ providerData, takeInData }) {
   return (
     <div>
       <form className={css.inputform}>
         <label for="contact-fname">First Name:</label>
-        <input type="text" id="contact-fname"></input>
+        <input
+          type="text"
+          id="contact-fname"
+          onChange={takeInData}
+          value={providerData.firstName}
+          name="firstName"
+        ></input>
         <label for="contact-lname">Last Name:</label>
-        <input type="text" id="contact-lname"></input>
+        <input
+          type="text"
+          id="contact-lname"
+          onChange={takeInData}
+          value={providerData.lastName}
+          name="lastName"
+        ></input>
         <label for="phone">phone:</label>
-        <input type="text" id="phone"></input>
+        <input
+          type="text"
+          id="phone"
+          onChange={takeInData}
+          value={providerData.phone}
+          name="phone"
+        ></input>
         <label for="email">email:</label>
-        <input type="text" id="email"></input>
+        <input
+          type="text"
+          id="email"
+          onChange={takeInData}
+          value={providerData.email}
+          name="email"
+        ></input>
         <label for="job">job title:</label>
-        <input type="text" id="job"></input>
+        <input
+          type="text"
+          id="job"
+          onChange={takeInData}
+          value={providerData.jobTitle}
+          name="jobTitle"
+        ></input>
       </form>
+      <Link to="/register1">
+        {" "}
+        <button className={css.button}>Back</button>
+      </Link>
+
+      <Link to="/register3">
+        {" "}
+        <button className={css.button}>Next</button>
+      </Link>
     </div>
   );
 }
