@@ -6,3 +6,11 @@
 .button:hover {
   border: black solid 2px;
 }
+
+#ukprnLink {
+  height: 20px;
+}
+
+#ukprnLink:hover {
+  height: 20px;
+}

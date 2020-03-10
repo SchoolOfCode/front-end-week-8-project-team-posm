@@ -5,7 +5,7 @@ import css from "./Provider-Input-Form.module.css";
 function ProviderDetails({ providerData, takeInData }) {
   return (
     <div>
-      <form className={css.inputform}>
+      <form className={css.inputForm}>
         <label for="contact-fname">First Name:</label>
         <input
           type="text"
@@ -14,6 +14,7 @@ function ProviderDetails({ providerData, takeInData }) {
           value={providerData.firstName}
           name="firstName"
         ></input>
+        <br />
         <label for="contact-lname">Last Name:</label>
         <input
           type="text"
@@ -22,6 +23,7 @@ function ProviderDetails({ providerData, takeInData }) {
           value={providerData.lastName}
           name="lastName"
         ></input>
+        <br />
         <label for="phone">phone:</label>
         <input
           type="text"
@@ -30,6 +32,7 @@ function ProviderDetails({ providerData, takeInData }) {
           value={providerData.phone}
           name="phone"
         ></input>
+        <br />
         <label for="email">email:</label>
         <input
           type="text"
@@ -38,6 +41,7 @@ function ProviderDetails({ providerData, takeInData }) {
           value={providerData.email}
           name="email"
         ></input>
+        <br />
         <label for="job">job title:</label>
         <input
           type="text"

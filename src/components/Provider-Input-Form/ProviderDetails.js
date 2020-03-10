@@ -13,15 +13,24 @@ function ProviderDetails({ takeInData, providerData }) {
           onChange={takeInData}
           value={providerData.provider}
           name="provider"
+          required
         ></input>
-        <label for="pkurn">PKURN</label>
+        <br />
+        <label for="pkurn">PKURN:</label>
         <input
           type="text"
           id="pkurn"
           onChange={takeInData}
           value={providerData.pkurn}
           name="pkurn"
-        ></input>
+        ></input>{" "}
+        <a href="https://www.ukrlp.co.uk/">
+          <img
+            id={css.ukprnLink}
+            src="https://www.plymosteoclinic.co.uk/wp-content/uploads/2018/01/orange-clipart-question-mark-14.png"
+            alt="question-mark"
+          />
+        </a>
       </form>
 
       <Link to="/register2">
