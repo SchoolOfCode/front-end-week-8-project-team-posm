@@ -4,6 +4,10 @@ import Login from "../Login/Login";
 import logo from "../../components/logo.svg";
 import littleLogo from "../Login/WMCA_logo.png";
 import "./index.css";
+import MainContact from "../Provider-Input-Form/MainContact";
+import PaymentProfile from "../Provider-Input-Form/PaymentProfile";
+import ProviderDetails from "../Provider-Input-Form/ProviderDetails";
+import ReviewSubmit from "../Provider-Input-Form/ReviewSubmit";
 
 import ProviderDetails from "../Provider-Input-Form/ProviderDetails";
 import MainContact from "../Provider-Input-Form/MainContact";
@@ -11,8 +15,6 @@ import PaymentProfile from "../Provider-Input-Form/PaymentProfile";
 import ReviewSubmit from "../Provider-Input-Form/ReviewSubmit";
 import Thanks from "../Provider-Input-Form/Thanks";
 import Dashboard from "../Dashboard/Dashboard";
-
-
 
 function App() {
   const [username, setUsername] = useState("");
@@ -114,7 +116,7 @@ function App() {
   }
   function submitLoginInfo() {
     const userData = { username: username, password: password };
-    fetch(`http://localhost:5000/users/login`, {
+    fetch(`http://localhost:5000/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

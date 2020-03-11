@@ -1,4 +1,5 @@
 import React from "react";
+import "./form.css";
 
 function ProviderSummary({ state }) {
   const {
@@ -16,7 +17,7 @@ function ProviderSummary({ state }) {
     sortCode3
   } = state;
   return (
-    <div>
+    <div className="summary">
       <h2>Summary</h2>
       <p>
         provider: {providerName}

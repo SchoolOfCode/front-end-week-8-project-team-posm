@@ -3,30 +3,46 @@ import "./Dashboard.css";
 const colors = ["red", "yellow", "green"];
 
 function ContractItem() {
-  const [currentColor, setColor] = useState(0);
-  function handleClick() {
-    if (currentColor < 2) {
-      setColor(currentColor + 1);
+  const [currentColor1, setColor1] = useState(0);
+  const [currentColor2, setColor2] = useState(0);
+  const [currentColor3, setColor3] = useState(0);
+  function handleClick1() {
+    if (currentColor1 < 2) {
+      setColor1(currentColor1 + 1);
     } else {
-      setColor(0);
+      setColor1(0);
+    }
+  }
+  function handleClick2() {
+    if (currentColor2 < 2) {
+      setColor2(currentColor2 + 1);
+    } else {
+      setColor2(0);
+    }
+  }
+  function handleClick3() {
+    if (currentColor3 < 2) {
+      setColor3(currentColor3 + 1);
+    } else {
+      setColor3(0);
     }
   }
   return (
     <>
       <span
         class="dot"
-        onClick={handleClick}
-        style={{ backgroundColor: colors[currentColor] }}
+        onClick={handleClick1}
+        style={{ backgroundColor: colors[currentColor1] }}
       ></span>
       <span
         class="dot"
-        onClick={handleClick}
-        style={{ backgroundColor: colors[currentColor] }}
+        onClick={handleClick2}
+        style={{ backgroundColor: colors[currentColor2] }}
       ></span>
       <span
         class="dot"
-        onClick={handleClick}
-        style={{ backgroundColor: colors[currentColor] }}
+        onClick={handleClick3}
+        style={{ backgroundColor: colors[currentColor3] }}
       ></span>
       <p> - Contract Name</p> <br />
     </>

@@ -1,0 +1,59 @@
+.button {
+  display: inline-block;
+  border: #ee7623 solid 2px;
+  border-radius: 10px;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.button:hover {
+  border: black solid 2px;
+}
+
+#ukprnLink {
+  height: 20px;
+  float: left;
+}
+
+#ukprnLink:hover {
+  height: 20px;
+}
+
+.form {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 30px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  padding-bottom: 30px;
+  box-shadow: 3px 3px grey;
+}
+.sort {
+  float: right;
+  padding-right: 10px;
+}
+
+.summary > h2 {
+  margin-block-start: 0;
+  margin-block-end: -15px;
+}
+.summary > p {
+  text-align: left;
+}
+label {
+  display: inline-block;
+  float: left;
+  width: fit-content;
+  text-align: right;
+}
+
+.form > input {
+  float: right;
+  margin-right: 10px;
+}

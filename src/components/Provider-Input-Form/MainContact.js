@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import css from "./Provider-Input-Form.module.css";
+import "./form.css";
 
 function ProviderDetails({ providerData, takeInData }) {
   return (
     <div>
-      <form className={css.inputForm}>
+      <form className="form">
         <label for="contact-fname">First Name:</label>
         <input
           type="text"
@@ -24,7 +24,7 @@ function ProviderDetails({ providerData, takeInData }) {
           name="lastName"
         ></input>
         <br />
-        <label for="phone">phone:</label>
+        <label for="phone">Phone:</label>
         <input
           type="text"
           id="phone"
@@ -33,7 +33,7 @@ function ProviderDetails({ providerData, takeInData }) {
           name="phoneNumber"
         ></input>
         <br />
-        <label for="email">email:</label>
+        <label for="email">Email:</label>
         <input
           type="text"
           id="email"
@@ -42,7 +42,7 @@ function ProviderDetails({ providerData, takeInData }) {
           name="email"
         ></input>
         <br />
-        <label for="job">job title:</label>
+        <label for="job">Job Title:</label>
         <input
           type="text"
           id="job"
@@ -51,15 +51,15 @@ function ProviderDetails({ providerData, takeInData }) {
           name="jobTitle"
         ></input>
       </form>
-      <Link to="/register1">
-        {" "}
-        <button className={css.button}>Back</button>
-      </Link>
+      <section className="buttons">
+        <Link to="/register1">
+          <button className="button">Back</button>
+        </Link>
 
-      <Link to="/register3">
-        {" "}
-        <button className={css.button}>Next</button>
-      </Link>
+        <Link to="/register3">
+          <button className="button">Next</button>
+        </Link>
+      </section>
     </div>
   );
 }

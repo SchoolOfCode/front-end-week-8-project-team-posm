@@ -1,13 +1,26 @@
 .progress {
-  margin: 10px;
-  border: 5px solid black;
-  width: 45vw;
+  margin: 0 auto;
+  margin-top: 10px;
+  border: 2px solid black;
+  width: 80%;
+  height: 70vh;
+  overflow: auto;
 }
 
 .progress > h3 {
   margin-block-start: 0;
   margin-block-end: 0;
   margin: 5px;
+}
+.searchBar {
+  text-align: center;
+  width: 75%;
+  border-radius: 10px;
+}
+.searchIcon {
+  width: 30px;
+  margin-left: 10%;
+  float: left;
 }
 
 .li {

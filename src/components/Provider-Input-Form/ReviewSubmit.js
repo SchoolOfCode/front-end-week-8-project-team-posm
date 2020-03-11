@@ -1,20 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ProviderSummary from "./ProviderSummary";
-import css from "./Provider-Input-Form.module.css";
+import "./form.css";
 
 function ReviewSubmit({ providerData, saveData }) {
   return (
-    <div>
+    <div className="form">
       <ProviderSummary state={providerData} />
-      <Link to="/register3">
-        {" "}
-        <button className={css.button}>Back</button>
-      </Link>
 
-      <button type="submit" className={css.button} onClick={saveData}>
-        Submit
-      </button>
+      <section className="buttons">
+        <Link to="/register3">
+          <button className="button">Back</button>
+        </Link>
+        <button type="submit" className="button" onClick={saveData}>
+          Submit
+        </button>
+      </section>
+
     </div>
   );
 }
