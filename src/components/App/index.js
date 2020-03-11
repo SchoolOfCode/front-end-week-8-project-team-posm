@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
 import Login from "../Login/Login";
 import logo from "../../components/logo.svg";
 import littleLogo from "../Login/WMCA_logo.png";
@@ -7,11 +13,6 @@ import "./index.css";
 import MainContact from "../Provider-Input-Form/MainContact";
 import PaymentProfile from "../Provider-Input-Form/PaymentProfile";
 import ProviderDetails from "../Provider-Input-Form/ProviderDetails";
-import ReviewSubmit from "../Provider-Input-Form/ReviewSubmit";
-
-import ProviderDetails from "../Provider-Input-Form/ProviderDetails";
-import MainContact from "../Provider-Input-Form/MainContact";
-import PaymentProfile from "../Provider-Input-Form/PaymentProfile";
 import ReviewSubmit from "../Provider-Input-Form/ReviewSubmit";
 import Thanks from "../Provider-Input-Form/Thanks";
 import Dashboard from "../Dashboard/Dashboard";
@@ -114,8 +115,9 @@ function App() {
       .then(data => setLoggedIn(data.success))
       .catch(err => console.log(err));
   }
+
   function submitLoginInfo() {
-    const userData = { username: username, password: password };
+    const userData = { email: username, password: password };
     fetch(`http://localhost:5000/login`, {
       method: "POST",
       headers: {
@@ -124,7 +126,10 @@ function App() {
       body: JSON.stringify(userData)
     })
       .then(response => response.json())
-      .then(data => setLoggedIn(data.success), console.log(userData))
+      .then(data => {
+        setLoggedIn(data.success);
+        console.log(userData, data.success, loggedIn);
+      })
       .catch(err => console.log(err));
   }
 
@@ -135,7 +140,6 @@ function App() {
         {loggedIn ? (
           <>
             <img src={littleLogo} className="userImg" alt="user profile" />
-
             <p className="logoutButton">Logout</p>
           </>
         ) : (
@@ -144,6 +148,7 @@ function App() {
       </header>
       <hr />
       <Router>
+        {loggedIn && <Redirect to="/dashboard" />}
         <Switch>
           <div>
             <Route path="/login">
@@ -183,12 +188,9 @@ function App() {
                 <ReviewSubmit providerData={providerData} saveData={saveData} />
               </Route>
             )}
-
-          
             <Route path="/dashboard">
               <Dashboard />
             </Route>
-
           </div>
         </Switch>
       </Router>
