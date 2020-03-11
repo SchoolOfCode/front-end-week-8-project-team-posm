@@ -11,11 +11,12 @@ function ProviderDetails({ takeInData, providerData }) {
           type="text"
           id="prov-name"
           onChange={takeInData}
-          value={providerData.provider}
-          name="provider"
+          value={providerData.providerName}
+          name="providerName"
           required
         ></input>
         <br />
+
         <a href="https://www.ukrlp.co.uk/">
           <img
             id="ukprnLink"
@@ -23,14 +24,16 @@ function ProviderDetails({ takeInData, providerData }) {
             alt="question-mark"
           />
         </a>
-        <label for="pkurn">PKURN:</label>
+        <label for="ukprn">UKPRN:</label>
+
         <input
           type="text"
-          id="pkurn"
+          id="ukprn"
           onChange={takeInData}
-          value={providerData.pkurn}
-          name="pkurn"
+          value={providerData.UKPRN}
+          name="ukprn"
         ></input>
+
       </form>
       <section className="buttons">
         <Link to="/register2">
