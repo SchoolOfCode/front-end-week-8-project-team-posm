@@ -29,8 +29,8 @@ function ProviderDetails({ providerData, takeInData }) {
           type="text"
           id="phone"
           onChange={takeInData}
-          value={providerData.phone}
-          name="phone"
+          value={providerData.phoneNumber}
+          name="phoneNumber"
         ></input>
         <br />
         <label for="email">email:</label>

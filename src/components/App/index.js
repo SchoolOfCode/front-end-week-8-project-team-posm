@@ -5,7 +5,13 @@ import logo from "../../components/logo.svg";
 import littleLogo from "../Login/WMCA_logo.png";
 import "./index.css";
 
+import ProviderDetails from "../Provider-Input-Form/ProviderDetails";
+import MainContact from "../Provider-Input-Form/MainContact";
+import PaymentProfile from "../Provider-Input-Form/PaymentProfile";
+import ReviewSubmit from "../Provider-Input-Form/ReviewSubmit";
+import Thanks from "../Provider-Input-Form/Thanks";
 import Dashboard from "../Dashboard/Dashboard";
+
 
 
 function App() {
@@ -13,11 +19,11 @@ function App() {
   const [password, setPassword] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
   const [providerData, setProviderData] = useState({
-    provider: "",
-    pkurn: "",
+    providerName: "",
+    UKPRN: "",
     firstName: "",
     lastName: "",
-    phone: "",
+    phoneNumber: "",
     email: "",
     jobTitle: "",
     bankName: "",
@@ -26,11 +32,65 @@ function App() {
     sortCode2: "",
     sortCode3: ""
   });
+  const [success, setSuccess] = useState(false);
 
   function takeInData(e) {
     const { value, name } = e.target;
     setProviderData({ ...providerData, [name]: value });
     console.log(providerData);
+  }
+
+  function saveData() {
+    const {
+      providerName,
+      UKPRN,
+      firstName,
+      lastName,
+      accountNumber,
+      sortCode1,
+      sortCode2,
+      sortCode3,
+      phoneNumber,
+      email,
+      jobTitle
+    } = providerData;
+    const sortCode = `${sortCode1}-${sortCode2}-${sortCode3}`;
+    const mainContact = `${firstName} ${lastName}`;
+    fetch(`http://localhost:5000/providers`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        providerName,
+        UKPRN,
+        sortCode,
+        accountNumber,
+        mainContact
+      })
+    })
+      .then(response => response.json())
+      .then(data => console.log(data.success))
+      .catch(err => console.log(err));
+
+    fetch(`http://localhost:5000/person`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        phoneNumber,
+        email,
+        jobTitle
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        setSuccess(data.success);
+      })
+      .catch(err => console.log(err));
   }
 
   function handleUsername(event) {
@@ -81,7 +141,6 @@ function App() {
         )}
       </header>
       <hr />
-
       <Router>
         <Switch>
           <div>
@@ -112,12 +171,22 @@ function App() {
                 providerData={providerData}
               />
             </Route>
-            <Route path="/register4">
-              <ReviewSubmit providerData={providerData} />
-            </Route>
+
+            {success ? (
+              <Route path="/register4">
+                <Thanks providerName={providerData.providerName} />
+              </Route>
+            ) : (
+              <Route path="/register4">
+                <ReviewSubmit providerData={providerData} saveData={saveData} />
+              </Route>
+            )}
+
+          
             <Route path="/dashboard">
               <Dashboard />
             </Route>
+
           </div>
         </Switch>
       </Router>

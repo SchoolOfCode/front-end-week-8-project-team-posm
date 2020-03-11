@@ -2,11 +2,11 @@ import React from "react";
 
 function ProviderSummary({ state }) {
   const {
-    provider,
-    pkurn,
+    providerName,
+    UKPRN,
     firstName,
     lastName,
-    phone,
+    phoneNumber,
     email,
     jobTitle,
     bankName,
@@ -19,13 +19,13 @@ function ProviderSummary({ state }) {
     <div>
       <h2>Summary</h2>
       <p>
-        provider: {provider}
+        provider: {providerName}
         <br />
-        pkurn: {pkurn}
+        pkurn: {UKPRN}
         <br />
         Contact Name: {firstName} {lastName}
         <br />
-        Contact Number: {phone}
+        Contact Number: {phoneNumber}
         <br />
         email: {email}
         <br />
