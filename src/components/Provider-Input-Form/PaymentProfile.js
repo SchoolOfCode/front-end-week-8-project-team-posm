@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import css from "./Provider-Input-Form.module.css";
+import "./form.css";
 
 function PaymentProfile({ takeInData, providerData }) {
   return (
     <div>
-      <form className={css.inputform}>
+      <form className="form">
         <label for="bank-name"></label>Bank name:
         <input
           id="bank-name"
@@ -25,44 +25,45 @@ function PaymentProfile({ takeInData, providerData }) {
         ></input>
         <br />
         <label for="sort-code">Sort Code:</label>
-        <input
-          id="sort-code"
-          type="text"
-          maxlength="2"
-          size="2"
-          onChange={takeInData}
-          value={providerData.sortCode1}
-          name="sortCode1"
-        />
-        -
-        <input
-          type="text"
-          maxlength="2"
-          size="2"
-          onChange={takeInData}
-          value={providerData.sortCode2}
-          name="sortCode2"
-        />
-        -
-        <input
-          type="text"
-          maxlength="2"
-          size="2"
-          onChange={takeInData}
-          value={providerData.sortCode3}
-          name="sortCode3"
-        />
-        <br />
+        <section className="sort">
+          <input
+            id="sort-code"
+            type="text"
+            maxlength="2"
+            size="2"
+            onChange={takeInData}
+            value={providerData.sortCode1}
+            name="sortCode1"
+          />
+          -
+          <input
+            type="text"
+            maxlength="2"
+            size="2"
+            onChange={takeInData}
+            value={providerData.sortCode2}
+            name="sortCode2"
+          />
+          -
+          <input
+            type="text"
+            maxlength="2"
+            size="2"
+            onChange={takeInData}
+            value={providerData.sortCode3}
+            name="sortCode3"
+          />
+        </section>
       </form>
-      <Link to="/register2">
-        {" "}
-        <button className={css.button}>Back</button>
-      </Link>
+      <section className="buttons">
+        <Link to="/register2">
+          <button className="button">Back</button>
+        </Link>
 
-      <Link to="/register4">
-        {" "}
-        <button className={css.button}>Next</button>
-      </Link>
+        <Link to="/register4">
+          <button className="button">Next</button>
+        </Link>
+      </section>
     </div>
   );
 }
