@@ -20,15 +20,15 @@ function ProviderSummary({ state }) {
     <div className="summary">
       <h2>Summary</h2>
       <p>
-        provider: {providerName}
+        Provider: {providerName}
         <br />
-        pkurn: {UKPRN}
+        UKPRN: {UKPRN}
         <br />
         Contact Name: {firstName} {lastName}
         <br />
         Contact Number: {phoneNumber}
         <br />
-        email: {email}
+        Email: {email}
         <br />
         Job Title: {jobTitle}
         <br />

@@ -5,9 +5,10 @@ import logo from "../../components/logo.svg";
 import littleLogo from "../Login/WMCA_logo.png";
 import "./index.css";
 
-import ProviderDetails from "../Provider-Input-Form/ProviderDetails";
 import MainContact from "../Provider-Input-Form/MainContact";
 import PaymentProfile from "../Provider-Input-Form/PaymentProfile";
+import ProviderDetails from "../Provider-Input-Form/ProviderDetails";
+
 import ReviewSubmit from "../Provider-Input-Form/ReviewSubmit";
 import Thanks from "../Provider-Input-Form/Thanks";
 import Dashboard from "../Dashboard/Dashboard";
@@ -144,19 +145,6 @@ function App() {
       .then(data => setLoggedIn(data.success))
       .catch(err => console.log(err));
   }
-  function submitLoginInfo() {
-    const userData = { username: username, password: password };
-    fetch(`http://localhost:5000/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(userData)
-    })
-      .then(response => response.json())
-      .then(data => setLoggedIn(data.success), console.log(userData))
-      .catch(err => console.log(err));
-  }
 
   return (
     <div className="App">
@@ -165,7 +153,6 @@ function App() {
         {loggedIn ? (
           <>
             <img src={littleLogo} className="userImg" alt="user profile" />
-
             <p className="logoutButton">Logout</p>
           </>
         ) : (
@@ -180,7 +167,10 @@ function App() {
               <Login
                 handleUsername={handleUsername}
                 handlePassword={handlePassword}
-                submitLoginInfo={submitLoginInfo}
+                setLoggedIn={setLoggedIn}
+                loggedIn={loggedIn}
+                username={username}
+                password={password}
                 createUser={createUser}
                 Link={Link}
               />
@@ -214,6 +204,7 @@ function App() {
               </Route>
             )}
 
+
             <Route path="/dashboard">
               <Dashboard />
             </Route>
@@ -225,6 +216,7 @@ function App() {
                 sendContractData={sendContractData}
               />
             </Route>
+
           </div>
         </Switch>
       </Router>
