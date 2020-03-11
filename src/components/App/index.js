@@ -14,11 +14,11 @@ function App() {
   const [password, setPassword] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
   const [providerData, setProviderData] = useState({
-    provider: "",
-    pkurn: "",
+    providerName: "",
+    UKPRN: "",
     firstName: "",
     lastName: "",
-    phone: "",
+    phoneNumber: "",
     email: "",
     jobTitle: "",
     bankName: "",
@@ -32,6 +32,60 @@ function App() {
     const { value, name } = e.target;
     setProviderData({ ...providerData, [name]: value });
     console.log(providerData);
+  }
+
+  //saveData runs on click of submit button. It needs to send the provider data to the database via a post fetch
+  //request.
+
+  function saveData() {
+    const {
+      providerName,
+      UKPRN,
+      firstName,
+      lastName,
+      accountNumber,
+      sortCode1,
+      sortCode2,
+      sortCode3,
+      phoneNumber,
+      email,
+      jobTitle
+    } = providerData;
+    const sortCode = `${sortCode1}${sortCode2}${sortCode3}`;
+    const mainContact = `${firstName} ${lastName}`;
+    fetch(`http://localhost:5000/providers`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        providerName,
+        UKPRN,
+        sortCode,
+        accountNumber,
+        mainContact
+      })
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(err => console.log(err));
+
+    fetch(`http://localhost:5000/person`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        phoneNumber,
+        email,
+        jobTitle
+      })
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(err => console.log(err));
   }
 
   function handleUsername(event) {
@@ -113,7 +167,7 @@ function App() {
               />
             </Route>
             <Route path="/register4">
-              <ReviewSubmit providerData={providerData} />
+              <ReviewSubmit providerData={providerData} saveData={saveData} />
             </Route>
           </div>
         </Switch>

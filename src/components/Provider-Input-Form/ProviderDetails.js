@@ -11,18 +11,18 @@ function ProviderDetails({ takeInData, providerData }) {
           type="text"
           id="prov-name"
           onChange={takeInData}
-          value={providerData.provider}
-          name="provider"
+          value={providerData.providerName}
+          name="providerName"
           required
         ></input>
         <br />
-        <label for="pkurn">PKURN:</label>
+        <label for="ukprn">UKPRN:</label>
         <input
           type="text"
-          id="pkurn"
+          id="ukprn"
           onChange={takeInData}
-          value={providerData.pkurn}
-          name="pkurn"
+          value={providerData.UKPRN}
+          name="UKPRN"
         ></input>{" "}
         <a href="https://www.ukrlp.co.uk/">
           <img
