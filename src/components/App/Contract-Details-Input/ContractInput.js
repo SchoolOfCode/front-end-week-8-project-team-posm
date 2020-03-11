@@ -59,13 +59,16 @@ function ContractInput({ takeInContract, contractData, sendContractData }) {
         ></input>
         <br />
         <label for="complete">Complete:</label>
-        <input
+        <select
           type="text"
           id="complete"
           onChange={takeInContract}
           value={contractData.complete}
           name="complete"
-        ></input>
+        >
+          <option>true</option>
+          <option>false</option>
+        </select>
         <br />
         <label for="budget">Budget:</label>
         <input

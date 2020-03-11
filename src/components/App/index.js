@@ -22,38 +22,41 @@ function App() {
     UKPRN: "",
     firstName: "",
     lastName: "",
-    phoneNumber: "",
+    phoneNumber: null,
     email: "",
     jobTitle: "",
     bankName: "",
-    accountNumber: "",
+    accountNumber: null,
     sortCode1: "",
     sortCode2: "",
     sortCode3: ""
   });
   const [success, setSuccess] = useState(false);
   const [contractData, setContractData] = useState({
-    companyID: "",
-    startDate: "",
+    providerName: "",
+    companyID: null,
+    startDate: null,
     endDate: "",
-    numberOfLearners: 0,
+    numberOfLearners: null,
     skillLevel: "",
     summary: "",
-    complete: 0,
-    budget: 0
+    complete: null,
+    budget: null
   });
 
   function takeInContract(e) {
     const { value, name } = e.target;
-    setContractData({ ...contractData, [name]: value });
+    const newData = { ...contractData, [name]: value };
+    setContractData(newData);
+    console.log(newData);
   }
-  console.log(contractData);
 
   function takeInData(e) {
     const { value, name } = e.target;
-    setProviderData({ ...providerData, [name]: value });
+    const newData = { ...providerData, [name]: value };
+    setProviderData(newData);
+    console.log(newData);
   }
-  console.log(providerData);
 
   function sendContractData() {
     fetch(`http://localhost:5000/contracts`, {
@@ -101,7 +104,7 @@ function App() {
       .then(data => console.log(data.success))
       .catch(err => console.log(err));
 
-    fetch(`http://localhost:5000/person`, {
+    fetch(`http://localhost:5000/persons`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -116,6 +119,7 @@ function App() {
     })
       .then(response => response.json())
       .then(data => {
+        console.log(data);
         setSuccess(data.success);
       })
       .catch(err => console.log(err));

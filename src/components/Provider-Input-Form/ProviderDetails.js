@@ -31,9 +31,8 @@ function ProviderDetails({ takeInData, providerData }) {
           id="ukprn"
           onChange={takeInData}
           value={providerData.UKPRN}
-          name="ukprn"
+          name="UKPRN"
         ></input>
-
       </form>
       <section className="buttons">
         <Link to="/register2">
