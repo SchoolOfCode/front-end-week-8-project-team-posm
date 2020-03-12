@@ -1,5 +1,5 @@
 import React from "react";
-import "../../Provider-Input-Form/form.css";
+import "./contracts.css";
 
 function ContractInput({ takeInContract, contractData, sendContractData }) {
   return (
@@ -14,7 +14,7 @@ function ContractInput({ takeInContract, contractData, sendContractData }) {
           value={contractData.providerName}
           name="providerName"
         ></input>
-        <br />
+
         <label for="companyID">Provider ID:</label>
         <input
           type="text"
@@ -23,7 +23,7 @@ function ContractInput({ takeInContract, contractData, sendContractData }) {
           value={contractData.companyID}
           name="companyID"
         ></input>
-        <br />
+
         <label for="start-date">Start Date:</label>
         <input
           type="text"
@@ -33,7 +33,7 @@ function ContractInput({ takeInContract, contractData, sendContractData }) {
           name="startDate"
           placeholder="dd/mm/yyyy"
         ></input>
-        <br />
+
         <label for="end-date">End Date:</label>
         <input
           type="text"
@@ -43,7 +43,7 @@ function ContractInput({ takeInContract, contractData, sendContractData }) {
           name="endDate"
           placeholder="dd/mm/yyyy"
         ></input>
-        <br />
+
         <label for="numberOfLearners">Number of Learners:</label>
         <input
           type="text"
@@ -52,7 +52,7 @@ function ContractInput({ takeInContract, contractData, sendContractData }) {
           value={contractData.numberOfLearners}
           name="numberOfLearners"
         ></input>
-        <br />
+
         <label for="skillLevel">Skill Level:</label>
         <input
           type="text"
@@ -61,7 +61,7 @@ function ContractInput({ takeInContract, contractData, sendContractData }) {
           value={contractData.skillLevel}
           name="skillLevel"
         ></input>
-        <br />
+
         <label for="budget">Budget:</label>
         <input
           type="text"
@@ -70,7 +70,7 @@ function ContractInput({ takeInContract, contractData, sendContractData }) {
           value={contractData.budget}
           name="budget"
         ></input>
-        <br />
+
         <label for="complete">Complete:</label>
         <input
           type="text"
@@ -83,7 +83,11 @@ function ContractInput({ takeInContract, contractData, sendContractData }) {
       </form>
 
       <section className="contractbuttons">
-        <button className="button" id="submit" onClick={sendContractData}>
+        <button
+          className="button"
+          id="submitcontract"
+          onClick={sendContractData}
+        >
           Submit
         </button>
       </section>
