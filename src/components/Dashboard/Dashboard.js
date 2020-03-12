@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Dashboard.css";
 import ContractItem from "../contractItem/ContractItem";
 import Searchbar from "../searchbar/searchbar";
+//import DisplayProviders from "../displayProviders/displayProviders";
 
 function Dashboard() {
   const [input, setInput] = useState("");
