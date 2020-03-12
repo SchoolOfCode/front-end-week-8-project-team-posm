@@ -11,6 +11,11 @@
   margin-left: 7px;
   border: black solid 1px;
 }
+.contract-name {
+  text-align: right;
+  margin: 10px;
+  display: inline;
+}
 
 .progress > p {
   display: inline-block;
@@ -21,7 +26,7 @@
   margin: 0 auto;
   margin-top: 10px;
   border: 2px solid black;
-  width: 30%;
+  width: 50%;
   height: 70vh;
   overflow: auto;
 }

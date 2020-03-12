@@ -35,6 +35,7 @@ function Dashboard() {
         <Link to="/input-contract">
           <button className="contractButton">Add New Contract</button>
         </Link>
+        <br />
         <button className="contractButton">Payment Profile</button>
       </div>
     </>
