@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import "./contractItem.css";
 const colors = ["red", "yellow", "green"];
 
@@ -45,13 +44,7 @@ function ContractItem({ children }) {
         onClick={handleClick3}
         style={{ backgroundColor: colors[currentColor3] }}
       ></span>
-      <span
-        class="dot"
-        style={{ backgroundColor: "white", border: "white solid 1px" }}
-      ></span>
-      <Link to="/contract-page">
-        <p>- Company Name / Contract ID</p>
-      </Link>
+      <p> - Company Name / Contract ID</p>
       {children}
     </>
   );

@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Login from "../Login/Login";
 import logo from "../../components/logo.svg";
 import littleLogo from "../Login/WMCA_logo.png";
@@ -154,9 +148,6 @@ function App() {
               />
             </Route>
 
-
-        
-
             <Route path="/dashboard">
               <Dashboard />
             </Route>
@@ -177,7 +168,6 @@ function App() {
               <ContractPage />
             </Route>
             {/* <Redirect exact from="/" to="/home" /> */}
-
           </div>
         </Switch>
       </Router>
