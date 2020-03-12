@@ -15,7 +15,7 @@ function ProviderDetails({ providerData, takeInData }) {
           value={providerData.firstName}
           name="firstName"
         ></input>
-        <br />
+
         <label for="contact-lname">Last Name:</label>
         <input
           type="text"
@@ -24,7 +24,7 @@ function ProviderDetails({ providerData, takeInData }) {
           value={providerData.lastName}
           name="lastName"
         ></input>
-        <br />
+
         <label for="phone">Phone:</label>
         <input
           type="text"
@@ -33,7 +33,7 @@ function ProviderDetails({ providerData, takeInData }) {
           value={providerData.phoneNumber}
           name="phoneNumber"
         ></input>
-        <br />
+
         <label for="email">Email:</label>
         <input
           type="text"
@@ -42,7 +42,7 @@ function ProviderDetails({ providerData, takeInData }) {
           value={providerData.email}
           name="email"
         ></input>
-        <br />
+
         <label for="job">Job Title:</label>
         <input
           type="text"

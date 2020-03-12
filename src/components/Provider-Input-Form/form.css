@@ -68,6 +68,9 @@ h1 {
   padding: 15px;
   padding-bottom: 30px;
   /* box-shadow: 3px 3px grey; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 30px 30px 30px 30px 30px 30px 30px 30px;
 }
 .sort {
   float: right;

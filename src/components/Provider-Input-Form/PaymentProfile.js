@@ -7,7 +7,7 @@ function PaymentProfile({ takeInData, providerData }) {
   return (
     <div>
       <form className="form">
-        <label for="bank-name"></label>Bank name:
+        <label for="bank-name">Bank name:</label>
         <input
           id="bank-name"
           type="text"
@@ -15,7 +15,6 @@ function PaymentProfile({ takeInData, providerData }) {
           value={providerData.bankName}
           name="bankName"
         ></input>
-        <br />
         <label for="account-number">Account Number:</label>
         <input
           id="account-number"
@@ -24,7 +23,6 @@ function PaymentProfile({ takeInData, providerData }) {
           value={providerData.accountNumber}
           name="accountNumber"
         ></input>
-        <br />
         <label for="sort-code">Sort Code:</label>
         <section className="sort">
           <input
