@@ -17,3 +17,9 @@ function Searchbar({ input, handleSetInput }) {
 }
 
 export default Searchbar;
+
+// PLAN FOR SEARCH
+// may need a route for search contracts by company name or ID @
+// useEffect ()=> fetch(contracts). res.json -> data -> map
+// through array display all contract id's and company names
+// make a new peice of state too store "options" of things that match the search

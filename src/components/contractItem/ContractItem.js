@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./contractItem.css";
 const colors = ["red", "yellow", "green"];
 
-function ContractItem({ children }) {
+function ContractItem({ children, provider_name, contract_id }) {
   const [currentColor1, setColor1] = useState(0);
   const [currentColor2, setColor2] = useState(0);
   const [currentColor3, setColor3] = useState(0);
@@ -49,11 +49,16 @@ function ContractItem({ children }) {
         class="dot"
         style={{ backgroundColor: "white", border: "white solid 1px" }}
       ></span>
+
       <span className="contract-name">
-        <Link to="/contract-page">
-          <p> Company Name / Contract ID</p>
-        </Link>
-      </span>
+
+      <Link to="/contract-page">
+        <p>
+          {provider_name} / {contract_id}
+        </p>
+      </Link>
+    </span>
+
       {children}
     </>
   );
