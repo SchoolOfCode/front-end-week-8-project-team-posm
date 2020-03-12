@@ -30,11 +30,17 @@
   display: inline-block;
   margin: 5px;
 }
+#dashButtons {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+}
 
 .contractButton {
   border: #ee7623 solid 2px;
   border-radius: 10px;
   float: right;
+  width: 120px;
   margin-top: 10px;
   margin-right: 10px;
 }

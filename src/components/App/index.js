@@ -45,6 +45,12 @@ function App() {
     complete: null,
     budget: null
   });
+  const [isChecked, setIsChecked] = useState(false);
+
+  function handleCheckboxChange() {
+    setIsChecked(!isChecked);
+    console.log(isChecked);
+  }
 
   function takeInContract(e) {
     const { value, name } = e.target;
@@ -165,7 +171,10 @@ function App() {
               <LandingPage />
             </Route>
             <Route path="/contract-page">
-              <ContractPage />
+              <ContractPage
+                handleCheckboxChange={handleCheckboxChange}
+                isChecked={isChecked}
+              />
             </Route>
             {/* <Redirect exact from="/" to="/home" /> */}
           </div>

@@ -6,6 +6,9 @@ import ContractItem from "../contractItem/ContractItem";
 import Searchbar from "../searchbar/searchbar";
 //import DisplayProviders from "../displayProviders/displayProviders";
 
+import Checkbox from "../checkbox/checkbox";
+import Autocomplete from "../autoComplete/autocomplete";
+
 function Dashboard() {
   const [input, setInput] = useState("");
 
@@ -19,8 +22,22 @@ function Dashboard() {
       <Searchbar input={input} handleSetInput={handleSetInput} />
       <div className="progress">
         <h3>Contracts In Progress</h3>
-        <p>M F L</p> <br />
-        <ContractItem /> <br />
+
+        <br />
+        <p>M</p>
+        <p>F</p>
+        <p>L</p>
+        <br />
+        <Autocomplete input={input} />
+      </div>
+
+      <div id="dashButtons">
+        <Link to="/input-contract">
+          <button className="contractButton">Add New Contract</button>
+        </Link>
+        <br />
+        <button className="contractButton">Payment Profile</button>
+
       </div>
       <Link to="/input-contract">
         <button className="contractButton">Add New Contract</button>
