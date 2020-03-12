@@ -1,5 +1,6 @@
 import React from "react";
 import "./contracts.css";
+import { Link } from "react-router-dom";
 
 function ContractInput({ takeInContract, contractData, sendContractData }) {
   return (
@@ -82,13 +83,15 @@ function ContractInput({ takeInContract, contractData, sendContractData }) {
       </form>
 
       <section className="contractbuttons">
-        <button
-          className="button"
-          id="submitcontract"
-          onClick={sendContractData}
-        >
-          Submit
-        </button>
+        <Link to="/dashboard">
+          <button
+            className="button"
+            id="submitcontract"
+            onClick={sendContractData}
+          >
+            Submit
+          </button>
+        </Link>
       </section>
     </div>
   );
