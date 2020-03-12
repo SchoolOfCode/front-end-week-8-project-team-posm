@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import "./Login.css";
+import { Link } from "react-router-dom";
 
 function Login({
   handleUsername,
@@ -34,6 +35,9 @@ function Login({
       <input placeholder="Username" onChange={handleUsername} /> <br />
       <input type="password" placeholder="Password" onChange={handlePassword} />
       <br />
+      <Link to="/home">
+        <button className="button">Back</button>
+      </Link>
       <button onClick={submitLoginInfo} className="loginButton">
         Login
       </button>

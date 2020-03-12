@@ -6,6 +6,8 @@ import Asset2 from "../../SVG/Asset2.svg";
 function ProviderDetails({ providerData, takeInData }) {
   return (
     <div>
+      {" "}
+      <h4>Main Contact</h4>
       <form className="form">
         <label for="contact-fname">First Name:</label>
         <input
