@@ -154,6 +154,9 @@ function App() {
               />
             </Route>
 
+
+        
+
             <Route path="/dashboard">
               <Dashboard />
             </Route>
@@ -174,6 +177,7 @@ function App() {
               <ContractPage />
             </Route>
             {/* <Redirect exact from="/" to="/home" /> */}
+
           </div>
         </Switch>
       </Router>
