@@ -4,10 +4,6 @@ import Login from "../Login/Login";
 import logo from "../../components/logo.svg";
 import littleLogo from "../Login/WMCA_logo.png";
 import "./index.css";
-import MainContact from "../Provider-Input-Form/MainContact";
-import PaymentProfile from "../Provider-Input-Form/PaymentProfile";
-import ProviderDetails from "../Provider-Input-Form/ProviderDetails";
-import ReviewSubmit from "../Provider-Input-Form/ReviewSubmit";
 
 import ProviderDetails from "../Provider-Input-Form/ProviderDetails";
 import MainContact from "../Provider-Input-Form/MainContact";
@@ -184,11 +180,9 @@ function App() {
               </Route>
             )}
 
-          
             <Route path="/dashboard">
               <Dashboard />
             </Route>
-
           </div>
         </Switch>
       </Router>
