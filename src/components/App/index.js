@@ -20,7 +20,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [providerData, setProviderData] = useState({
     providerName: "",
-    UKPRN: "",
+    UKPRN: null,
     firstName: "",
     lastName: "",
     phoneNumber: null,
@@ -194,16 +194,13 @@ function App() {
               />
             </Route>
 
-            {success ? (
-              <Route path="/register4">
-                <Thanks providerName={providerData.providerName} />
-              </Route>
-            ) : (
-              <Route path="/register4">
-                <ReviewSubmit providerData={providerData} saveData={saveData} />
-              </Route>
-            )}
+            <Route path="/thanks">
+              <Thanks providerName={providerData.providerName} />
+            </Route>
 
+            <Route path="/register4">
+              <ReviewSubmit providerData={providerData} saveData={saveData} />
+            </Route>
 
             <Route path="/dashboard">
               <Dashboard />
@@ -216,7 +213,6 @@ function App() {
                 sendContractData={sendContractData}
               />
             </Route>
-
           </div>
         </Switch>
       </Router>
