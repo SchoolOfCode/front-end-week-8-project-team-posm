@@ -1,14 +1,16 @@
 import React from "react";
-import ContractItem from "../contractItem/ContractItem";
-import "./ContractPage.css";
 
-function ContractPage() {
+import "./ContractPage.css";
+import Checkbox from "../checkbox/checkbox";
+
+function ContractPage({ handleCheckboxChange, isChecked }) {
   return (
     <wrapper className="contractWrapper">
       <div className="contractSummary" id="left">
-        <ContractItem>
-          <p> insert info here?</p>
-        </ContractItem>
+        <Checkbox
+          isChecked={isChecked}
+          handleCheckboxChange={handleCheckboxChange}
+        />
       </div>
       <div className="contractSummary" id="right">
         <p>insert all the data from the summary in here</p>
