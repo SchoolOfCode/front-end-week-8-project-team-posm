@@ -194,15 +194,13 @@ function App() {
               />
             </Route>
 
-            {success ? (
-              <Route path="/register4">
-                <Thanks providerName={providerData.providerName} />
-              </Route>
-            ) : (
-              <Route path="/register4">
-                <ReviewSubmit providerData={providerData} saveData={saveData} />
-              </Route>
-            )}
+            <Route path="/thanks">
+              <Thanks providerName={providerData.providerName} />
+            </Route>
+
+            <Route path="/register4">
+              <ReviewSubmit providerData={providerData} saveData={saveData} />
+            </Route>
 
             <Route path="/dashboard">
               <Dashboard />

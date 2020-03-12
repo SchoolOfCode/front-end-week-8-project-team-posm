@@ -1,9 +1,9 @@
-h3 {
-  position: absolute;
-  left: 50%;
-  top: 20%;
-  transform: translate(-50%);
+h1 {
+  color: #ee7623;
+  text-align: center;
+  margin: 10px;
 }
+
 .button {
   display: inline-block;
   border: #ee7623 solid 2px;
@@ -34,18 +34,6 @@ h3 {
   position: absolute;
   left: 50%;
   top: 100%;
-  transform: translate(-50%);
-}
-
-.contractbuttons {
-  display: flex;
-  justify-content: space-between;
-  width: 150px;
-  padding-top: 5px;
-  margin: 5px;
-  position: absolute;
-  left: 50%;
-  top: 70%;
   transform: translate(-50%);
 }
 
