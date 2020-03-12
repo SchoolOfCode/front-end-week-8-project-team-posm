@@ -17,7 +17,11 @@ function ProviderDetails({ takeInData, providerData }) {
           required
         ></input>
         <span>
-          <a href="https://www.ukrlp.co.uk/">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.ukrlp.co.uk/"
+          >
             <img
               id="ukprnLink"
               src="https://www.plymosteoclinic.co.uk/wp-content/uploads/2018/01/orange-clipart-question-mark-14.png"
@@ -36,6 +40,14 @@ function ProviderDetails({ takeInData, providerData }) {
         ></input>
       </form>
       <section className="buttons">
+        <Link to="/register2">
+          <button
+            className="button"
+            style={{ color: "white", border: "white" }}
+          >
+            Next
+          </button>
+        </Link>
         <Link to="/register2">
           <button className="button">Next</button>
         </Link>

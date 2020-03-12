@@ -1,6 +1,16 @@
 h1 {
   color: #ee7623;
   text-align: center;
+  margin-top: 20px;
+}
+h4 {
+  position: absolute;
+  top: 23%;
+  left: 50%;
+
+  transform: translate(-50%);
+  color: black;
+  text-align: center;
   margin: 10px;
 }
 

@@ -6,6 +6,7 @@ import Asset3 from "../../SVG/Asset3.svg";
 function PaymentProfile({ takeInData, providerData }) {
   return (
     <div>
+      <h4>Provider Bank Details</h4>
       <form className="form">
         <label for="bank-name">Bank name:</label>
         <input

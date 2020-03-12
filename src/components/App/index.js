@@ -45,12 +45,6 @@ function App() {
     complete: null,
     budget: null
   });
-  const [isChecked, setIsChecked] = useState(false);
-
-  function handleCheckboxChange() {
-    setIsChecked(!isChecked);
-    console.log(isChecked);
-  }
 
   function takeInContract(e) {
     const { value, name } = e.target;
@@ -103,6 +97,7 @@ function App() {
     <div className="App">
       <header>
         <img src={logo} className="logo" alt="WMCA logo" />
+
         {loggedIn ? (
           <>
             <img src={littleLogo} className="userImg" alt="user profile" />
@@ -171,10 +166,7 @@ function App() {
               <LandingPage />
             </Route>
             <Route path="/contract-page">
-              <ContractPage
-                handleCheckboxChange={handleCheckboxChange}
-                isChecked={isChecked}
-              />
+              <ContractPage />
             </Route>
             {/* <Redirect exact from="/" to="/home" /> */}
           </div>
