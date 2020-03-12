@@ -11,7 +11,7 @@ function Searchbar({ input, handleSetInput }) {
         placeholder="Search"
         className="searchBar"
       />
-      <img className="searchIcon" src={searchIcon} />
+      <img className="searchIcon" alt="search icon" src={searchIcon} />
     </>
   );
 }
