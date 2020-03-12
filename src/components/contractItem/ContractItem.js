@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./contractItem.css";
+import { Link } from "react-router-dom";
 const colors = ["red", "yellow", "green"];
 
 function ContractItem({ children, provider_name, contract_id }) {
@@ -51,13 +52,12 @@ function ContractItem({ children, provider_name, contract_id }) {
       ></span>
 
       <span className="contract-name">
-
-      <Link to="/contract-page">
-        <p>
-          {provider_name} / {contract_id}
-        </p>
-      </Link>
-    </span>
+        <Link to="/contract-page">
+          <p>
+            {provider_name} / {contract_id}
+          </p>
+        </Link>
+      </span>
 
       {children}
     </>
