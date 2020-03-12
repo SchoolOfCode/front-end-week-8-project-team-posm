@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./contractItem.css";
 const colors = ["red", "yellow", "green"];
 
@@ -48,7 +49,9 @@ function ContractItem({ children }) {
         class="dot"
         style={{ backgroundColor: "white", border: "white solid 1px" }}
       ></span>
-      <p> Company Name / Contract ID</p>
+      <Link to="/contract-page">
+        <p>- Company Name / Contract ID</p>
+      </Link>
       {children}
     </>
   );

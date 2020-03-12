@@ -17,7 +17,7 @@ import ProviderDetails from "../Provider-Input-Form/ProviderDetails";
 import ReviewSubmit from "../Provider-Input-Form/ReviewSubmit";
 import Thanks from "../Provider-Input-Form/Thanks";
 import Dashboard from "../Dashboard/Dashboard";
-import ContractInput from "./Contract-Details-Input/ContractInput";
+import ContractInput from "../Contract-Details-Input/ContractInput";
 import LandingPage from "../LandingPage/LandingPage";
 import ContractPage from "../Dashboard/ContractPage";
 
@@ -154,6 +154,9 @@ function App() {
               />
             </Route>
 
+
+        
+
             <Route path="/dashboard">
               <Dashboard />
             </Route>
@@ -174,6 +177,7 @@ function App() {
               <ContractPage />
             </Route>
             {/* <Redirect exact from="/" to="/home" /> */}
+
           </div>
         </Switch>
       </Router>
