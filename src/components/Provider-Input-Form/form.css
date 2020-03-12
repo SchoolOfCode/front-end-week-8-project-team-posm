@@ -1,3 +1,9 @@
+h1 {
+  color: #ee7623;
+  text-align: center;
+  margin: 10px;
+}
+
 .button {
   display: inline-block;
   border: #ee7623 solid 2px;
@@ -5,17 +11,42 @@
 }
 .buttons {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  width: 150px;
   padding-top: 5px;
+  margin: 5px;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%);
 }
 
 .button:hover {
   border: black solid 2px;
 }
 
+.finalbuttons {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  padding-top: 5px;
+  margin: 5px;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%);
+}
+
+#submit {
+  background-color: #ee7623;
+  font-weight: bold;
+}
+
 #ukprnLink {
   height: 20px;
   float: left;
+  margin-right: 5px;
+  margin-top: 5px;
 }
 
 #ukprnLink:hover {
@@ -23,31 +54,50 @@
 }
 
 .form {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 20%;
   text-align: center;
   margin: 0 auto;
-  margin-top: 30px;
-  border: 1px solid black;
-  border-radius: 10px;
+  margin-top: 50px;
+  /* border: 1px solid black;
+  border-radius: 10px; */
   width: fit-content;
   height: fit-content;
-  padding: 10px;
+  padding: 15px;
   padding-bottom: 30px;
-  box-shadow: 3px 3px grey;
+  /* box-shadow: 3px 3px grey; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 30px 30px 30px 30px 30px 30px 30px 30px;
 }
 .sort {
   float: right;
   padding-right: 10px;
 }
 
+.summary {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 0%;
+  width: 300px;
+}
+
 .summary > h2 {
   margin-block-start: 0;
   margin-block-end: -15px;
+  margin-bottom: 10px;
 }
 .summary > p {
   text-align: left;
 }
 label {
   display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
   float: left;
   width: fit-content;
   text-align: right;
@@ -56,4 +106,14 @@ label {
 .form > input {
   float: right;
   margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.progress-bar {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 17%;
+  width: 250px;
 }

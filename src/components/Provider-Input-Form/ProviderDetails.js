@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./form.css";
+import Asset1 from "../../SVG/Asset1.svg";
 
 function ProviderDetails({ takeInData, providerData }) {
   return (
@@ -15,25 +16,23 @@ function ProviderDetails({ takeInData, providerData }) {
           name="providerName"
           required
         ></input>
-        <br />
-
-        <a href="https://www.ukrlp.co.uk/">
-          <img
-            id="ukprnLink"
-            src="https://www.plymosteoclinic.co.uk/wp-content/uploads/2018/01/orange-clipart-question-mark-14.png"
-            alt="question-mark"
-          />
-        </a>
-        <label for="ukprn">UKPRN:</label>
+        <span>
+          <a href="https://www.ukrlp.co.uk/">
+            <img
+              id="ukprnLink"
+              src="https://www.plymosteoclinic.co.uk/wp-content/uploads/2018/01/orange-clipart-question-mark-14.png"
+              alt="question-mark"
+            />
+          </a>
+          <label for="ukprn">UKPRN:</label>
+        </span>
 
         <input
           type="text"
           id="ukprn"
           onChange={takeInData}
-
           value={providerData.ukprn}
           name="ukprn"
-
         ></input>
       </form>
       <section className="buttons">
@@ -41,6 +40,7 @@ function ProviderDetails({ takeInData, providerData }) {
           <button className="button">Next</button>
         </Link>
       </section>
+      <img src={Asset1} className="progress-bar" alt="progress-bar" />
     </div>
   );
 }
