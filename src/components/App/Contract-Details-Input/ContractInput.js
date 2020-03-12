@@ -61,7 +61,6 @@ function ContractInput({ takeInContract, contractData, sendContractData }) {
           value={contractData.skillLevel}
           name="skillLevel"
         ></input>
-
         <label for="budget">Budget:</label>
         <input
           type="text"
