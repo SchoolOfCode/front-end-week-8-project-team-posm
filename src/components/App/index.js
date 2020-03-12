@@ -20,7 +20,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [providerData, setProviderData] = useState({
     providerName: "",
-    UKPRN: "",
+    UKPRN: null,
     firstName: "",
     lastName: "",
     phoneNumber: null,
@@ -204,7 +204,6 @@ function App() {
               </Route>
             )}
 
-
             <Route path="/dashboard">
               <Dashboard />
             </Route>
@@ -216,7 +215,6 @@ function App() {
                 sendContractData={sendContractData}
               />
             </Route>
-
           </div>
         </Switch>
       </Router>

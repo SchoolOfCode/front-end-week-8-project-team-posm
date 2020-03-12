@@ -1,8 +1,10 @@
 import React from "react";
+import "../../Provider-Input-Form/form.css";
 
 function ContractInput({ takeInContract, contractData, sendContractData }) {
   return (
     <div>
+      <h3>Contract Details</h3>
       <form className="form">
         <label for="provider-name">Provider:</label>
         <input
@@ -29,6 +31,7 @@ function ContractInput({ takeInContract, contractData, sendContractData }) {
           onChange={takeInContract}
           value={contractData.startDate}
           name="startDate"
+          placeholder="dd/mm/yyyy"
         ></input>
         <br />
         <label for="end-date">End Date:</label>
@@ -38,6 +41,7 @@ function ContractInput({ takeInContract, contractData, sendContractData }) {
           onChange={takeInContract}
           value={contractData.endDate}
           name="endDate"
+          placeholder="dd/mm/yyyy"
         ></input>
         <br />
         <label for="numberOfLearners">Number of Learners:</label>
@@ -58,18 +62,6 @@ function ContractInput({ takeInContract, contractData, sendContractData }) {
           name="skillLevel"
         ></input>
         <br />
-        <label for="complete">Complete:</label>
-        <select
-          type="text"
-          id="complete"
-          onChange={takeInContract}
-          value={contractData.complete}
-          name="complete"
-        >
-          <option>true</option>
-          <option>false</option>
-        </select>
-        <br />
         <label for="budget">Budget:</label>
         <input
           type="text"
@@ -78,11 +70,23 @@ function ContractInput({ takeInContract, contractData, sendContractData }) {
           value={contractData.budget}
           name="budget"
         ></input>
+        <br />
+        <label for="complete">Complete:</label>
+        <input
+          type="text"
+          id="complete"
+          onChange={takeInContract}
+          value={contractData.complete}
+          name="complete"
+          placeholder="true or false"
+        ></input>
       </form>
 
-      <button className="buttons" onClick={sendContractData}>
-        Submit
-      </button>
+      <section className="contractbuttons">
+        <button className="button" id="submit" onClick={sendContractData}>
+          Submit
+        </button>
+      </section>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./form.css";
+import Asset3 from "../../SVG/Asset3.svg";
 
 function PaymentProfile({ takeInData, providerData }) {
   return (
@@ -64,6 +65,7 @@ function PaymentProfile({ takeInData, providerData }) {
           <button className="button">Next</button>
         </Link>
       </section>
+      <img src={Asset3} className="progress-bar" alt="progress-bar" />
     </div>
   );
 }
