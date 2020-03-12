@@ -1,0 +1,14 @@
+.landingWrapper {
+  text-align: center;
+}
+
+.landingButton {
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 10px;
+  box-shadow: 3px 3px grey;
+}

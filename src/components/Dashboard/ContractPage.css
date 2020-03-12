@@ -1,0 +1,22 @@
+#left {
+  float: left;
+  margin-left: 8vw;
+}
+#right {
+  float: right;
+  margin-right: 8vw;
+}
+
+.contractSummary {
+  margin-bottom: 10px;
+  border: 2px solid black;
+  width: 40vw;
+  height: 200px;
+  display: inline-block;
+}
+
+.contract {
+  border: 2px solid black;
+  width: 83.5vw;
+  display: inline-block;
+}

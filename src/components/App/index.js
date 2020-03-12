@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
 import Login from "../Login/Login";
 import logo from "../../components/logo.svg";
 import littleLogo from "../Login/WMCA_logo.png";
@@ -8,11 +14,12 @@ import "./index.css";
 import MainContact from "../Provider-Input-Form/MainContact";
 import PaymentProfile from "../Provider-Input-Form/PaymentProfile";
 import ProviderDetails from "../Provider-Input-Form/ProviderDetails";
-
 import ReviewSubmit from "../Provider-Input-Form/ReviewSubmit";
 import Thanks from "../Provider-Input-Form/Thanks";
 import Dashboard from "../Dashboard/Dashboard";
 import ContractInput from "./Contract-Details-Input/ContractInput";
+import LandingPage from "../LandingPage/LandingPage";
+import ContractPage from "../Dashboard/ContractPage";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -49,14 +56,14 @@ function App() {
     const { value, name } = e.target;
     const newData = { ...contractData, [name]: value };
     setContractData(newData);
-    console.log(newData);
+    // console.log(newData);
   }
 
   function takeInData(e) {
     const { value, name } = e.target;
     const newData = { ...providerData, [name]: value };
     setProviderData(newData);
-    console.log(newData);
+    // console.log(newData);
   }
 
   function sendContractData() {
@@ -69,60 +76,6 @@ function App() {
     })
       .then(response => response.json())
       .then(data => console.log(data.success))
-      .catch(err => console.log(err));
-  }
-
-  function saveData() {
-    const {
-      providerName,
-      UKPRN,
-      firstName,
-      lastName,
-      accountNumber,
-      sortCode1,
-      sortCode2,
-      sortCode3,
-      phoneNumber,
-      email,
-      jobTitle
-    } = providerData;
-    const sortCode = `${sortCode1}-${sortCode2}-${sortCode3}`;
-    const mainContact = `${firstName} ${lastName}`;
-    fetch(`http://localhost:5000/providers`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        providerName,
-        UKPRN,
-        sortCode,
-        accountNumber,
-        mainContact
-      })
-    })
-      .then(response => response.json())
-      .then(data => console.log(data.success))
-      .catch(err => console.log(err));
-
-    fetch(`http://localhost:5000/persons`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        firstName,
-        lastName,
-        phoneNumber,
-        email,
-        jobTitle
-      })
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        setSuccess(data.success);
-      })
       .catch(err => console.log(err));
   }
 
@@ -193,22 +146,20 @@ function App() {
                 providerData={providerData}
               />
             </Route>
-
-            {success ? (
-              <Route path="/register4">
-                <Thanks providerName={providerData.providerName} />
-              </Route>
-            ) : (
-              <Route path="/register4">
-                <ReviewSubmit providerData={providerData} saveData={saveData} />
-              </Route>
-            )}
-
+            <Route path="/register4">
+              <ReviewSubmit
+                providerData={providerData}
+                setSuccess={setSuccess}
+                success={success}
+              />
+            </Route>
 
             <Route path="/dashboard">
               <Dashboard />
             </Route>
-
+            <Route path="/thanks">
+              <Thanks providerName={providerData.providerName} />
+            </Route>
             <Route path="/input-contract">
               <ContractInput
                 takeInContract={takeInContract}
@@ -216,7 +167,13 @@ function App() {
                 sendContractData={sendContractData}
               />
             </Route>
-
+            <Route path="/home">
+              <LandingPage />
+            </Route>
+            <Route path="/contract-page">
+              <ContractPage />
+            </Route>
+            {/* <Redirect exact from="/" to="/home" /> */}
           </div>
         </Switch>
       </Router>

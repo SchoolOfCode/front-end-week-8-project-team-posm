@@ -60,6 +60,7 @@ function ContractInput({ takeInContract, contractData, sendContractData }) {
         <br />
         <label for="complete">Complete:</label>
         <select
+          className="option"
           type="text"
           id="complete"
           onChange={takeInContract}
@@ -79,10 +80,11 @@ function ContractInput({ takeInContract, contractData, sendContractData }) {
           name="budget"
         ></input>
       </form>
-
-      <button className="buttons" onClick={sendContractData}>
-        Submit
-      </button>
+      <div className="buttons">
+        <button className="button" onClick={sendContractData}>
+          Submit
+        </button>
+      </div>
     </div>
   );
 }

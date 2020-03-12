@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Dashboard.css";
 const colors = ["red", "yellow", "green"];
 
-function ContractItem() {
+function ContractItem({ children }) {
   const [currentColor1, setColor1] = useState(0);
   const [currentColor2, setColor2] = useState(0);
   const [currentColor3, setColor3] = useState(0);
@@ -44,7 +44,8 @@ function ContractItem() {
         onClick={handleClick3}
         style={{ backgroundColor: colors[currentColor3] }}
       ></span>
-      <p> - Contract Name</p> <br />
+      <p> - Company Name / Contract ID</p>
+      {children}
     </>
   );
 }
