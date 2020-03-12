@@ -16,16 +16,16 @@ function ProviderDetails({ takeInData, providerData }) {
           name="providerName"
           required
         ></input>
-        <br />
-
-        <a href="https://www.ukrlp.co.uk/">
-          <img
-            id="ukprnLink"
-            src="https://www.plymosteoclinic.co.uk/wp-content/uploads/2018/01/orange-clipart-question-mark-14.png"
-            alt="question-mark"
-          />
-        </a>
-        <label for="ukprn">UKPRN:</label>
+        <span>
+          <a href="https://www.ukrlp.co.uk/">
+            <img
+              id="ukprnLink"
+              src="https://www.plymosteoclinic.co.uk/wp-content/uploads/2018/01/orange-clipart-question-mark-14.png"
+              alt="question-mark"
+            />
+          </a>
+          <label for="ukprn">UKPRN:</label>
+        </span>
 
         <input
           type="text"

@@ -5,7 +5,6 @@ import "./LandingPage.css";
 function LandingPage() {
   return (
     <div className="landingWrapper">
-      <h2>Which Page?</h2>
       <Link to="/login">
         <div className="landingButton">Employee Login</div>
       </Link>
