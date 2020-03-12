@@ -1,5 +1,5 @@
 import React from "react";
-import ContractItem from "./ContractItem";
+import ContractItem from "../contractItem/ContractItem";
 import "./ContractPage.css";
 
 function ContractPage() {
