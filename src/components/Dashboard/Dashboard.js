@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Dashboard.css";
-import ContractItem from "./ContractItem";
-import searchIcon from "./searchIcon.png";
+import ContractItem from "../contractItem/ContractItem";
+import Searchbar from "../searchbar/searchbar";
 
 function Dashboard() {
+  const [input, setInput] = useState("");
+
+  function handleSetInput(event) {
+    setInput(event.target.value);
+    console.log(input);
+  }
+
   return (
     <>
-      <input placeholder="Search" className="searchBar" />
-      <img className="searchIcon" src={searchIcon} />
+      <Searchbar input={input} handleSetInput={handleSetInput} />
       <div className="progress">
         <h3>Contracts In Progress</h3>
         <p>M F L</p> <br />

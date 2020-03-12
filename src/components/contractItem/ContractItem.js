@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Dashboard.css";
+import "./contractItem.css";
 const colors = ["red", "yellow", "green"];
 
 function ContractItem() {

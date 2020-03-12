@@ -1,0 +1,11 @@
+.searchBar {
+  text-align: center;
+  width: 75%;
+  border-radius: 10px;
+}
+
+.searchIcon {
+  width: 30px;
+  margin-left: 10%;
+  float: left;
+}
