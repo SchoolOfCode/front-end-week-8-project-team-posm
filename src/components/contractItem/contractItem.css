@@ -1,18 +1,3 @@
-.progress {
-  margin: 0 auto;
-  margin-top: 10px;
-  border: 2px solid black;
-  width: 80%;
-  height: 70vh;
-  overflow: auto;
-}
-
-.progress > h3 {
-  margin-block-start: 0;
-  margin-block-end: 0;
-  margin: 5px;
-}
-
 .li {
   display: inline;
 }
@@ -28,5 +13,20 @@
 
 .progress > p {
   display: inline-block;
+  margin: 5px;
+}
+
+.progress {
+  margin: 0 auto;
+  margin-top: 10px;
+  border: 2px solid black;
+  width: 80%;
+  height: 70vh;
+  overflow: auto;
+}
+
+.progress > h3 {
+  margin-block-start: 0;
+  margin-block-end: 0;
   margin: 5px;
 }
