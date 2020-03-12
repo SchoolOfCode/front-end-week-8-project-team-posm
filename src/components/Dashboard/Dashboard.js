@@ -6,6 +6,10 @@ import ContractItem from "../contractItem/ContractItem";
 import Searchbar from "../searchbar/searchbar";
 //import DisplayProviders from "../displayProviders/displayProviders";
 
+import Checkbox from "../checkbox/checkbox";
+import Autocomplete from "../autoComplete/autocomplete";
+
+
 function Dashboard() {
   const [input, setInput] = useState("");
 
@@ -24,8 +28,7 @@ function Dashboard() {
         <p>F</p>
         <p>L</p>
         <br />
-
-        <ContractItem />
+        <Autocomplete input={input} />
       </div>
 
       <div id="dashButtons">
