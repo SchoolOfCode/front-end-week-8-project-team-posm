@@ -1,14 +1,9 @@
-.section {
-  border: 1px solid black;
-  width: 350px;
-  height: 300px;
+.p {
+  font-size: 0.8em;
   padding: 10px;
 }
 
-.p {
-  font-size: 0.8em;
-}
-
 .div {
-  padding: 20px;
+  margin-top: 8px;
+  padding: 10px;
 }

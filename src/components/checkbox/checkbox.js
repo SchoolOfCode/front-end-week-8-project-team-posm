@@ -19,7 +19,7 @@ function Checkbox({ handleCheckBoxChange, isChecked }) {
           Management Sign Off
         </div>
         <p className="p">
-          by ticking this box you agree that the terms of this contract are
+          By ticking this box you agree that the terms of this contract are
           approved by your department.
         </p>
       </section>
