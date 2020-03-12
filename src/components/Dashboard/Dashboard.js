@@ -3,13 +3,20 @@ import "./Dashboard.css";
 import ContractItem from "../contractItem/ContractItem";
 import Searchbar from "../searchbar/searchbar";
 //import DisplayProviders from "../displayProviders/displayProviders";
+import Checkbox from "../checkbox/checkbox";
 
 function Dashboard() {
   const [input, setInput] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
 
   function handleSetInput(event) {
     setInput(event.target.value);
     console.log(input);
+  }
+
+  function handleCheckboxChange() {
+    setIsChecked(!isChecked);
+    console.log(isChecked);
   }
 
   return (
@@ -32,6 +39,10 @@ function Dashboard() {
         <ContractItem />
         <ContractItem />
       </div>
+      <Checkbox
+        isChecked={isChecked}
+        handleCheckboxChange={handleCheckboxChange}
+      />
     </>
   );
 }
