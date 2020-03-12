@@ -1,7 +1,9 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
+
 import ProviderSummary from "./ProviderSummary";
 import "./form.css";
+import Asset4 from "../../SVG/Asset4.svg";
 
 function ReviewSubmit({ providerData, setSuccess, success }) {
   const history = useHistory();
@@ -60,18 +62,12 @@ function ReviewSubmit({ providerData, setSuccess, success }) {
       .catch(err => console.log(err));
   }
   return (
-    <div className="form">
-      <ProviderSummary state={providerData} />
-
-      <section className="buttons">
-        <Link to="/register3">
-          <button className="button">Back</button>
-        </Link>
-        <button type="submit" className="button" onClick={saveData}>
-          Submit
-        </button>
-      </section>
-    </div>
+    <>
+      <div className="form">
+        <ProviderSummary state={providerData} saveData={saveData} />
+      </div>
+      <img src={Asset4} className="progress-bar" alt="progress-bar" />
+    </>
   );
 }
 
