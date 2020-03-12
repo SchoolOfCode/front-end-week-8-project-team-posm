@@ -1,16 +1,25 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
 import Login from "../Login/Login";
 import logo from "../../components/logo.svg";
 import littleLogo from "../Login/WMCA_logo.png";
 import "./index.css";
 
-import ProviderDetails from "../Provider-Input-Form/ProviderDetails";
 import MainContact from "../Provider-Input-Form/MainContact";
 import PaymentProfile from "../Provider-Input-Form/PaymentProfile";
+import ProviderDetails from "../Provider-Input-Form/ProviderDetails";
 import ReviewSubmit from "../Provider-Input-Form/ReviewSubmit";
 import Thanks from "../Provider-Input-Form/Thanks";
 import Dashboard from "../Dashboard/Dashboard";
+import ContractInput from "./Contract-Details-Input/ContractInput";
+import LandingPage from "../LandingPage/LandingPage";
+import ContractPage from "../Dashboard/ContractPage";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -18,76 +27,55 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [providerData, setProviderData] = useState({
     providerName: "",
-    UKPRN: "",
+    UKPRN: null,
     firstName: "",
     lastName: "",
-    phoneNumber: "",
+    phoneNumber: null,
     email: "",
     jobTitle: "",
     bankName: "",
-    accountNumber: "",
+    accountNumber: null,
     sortCode1: "",
     sortCode2: "",
     sortCode3: ""
   });
   const [success, setSuccess] = useState(false);
+  const [contractData, setContractData] = useState({
+    providerName: "",
+    companyID: null,
+    startDate: null,
+    endDate: "",
+    numberOfLearners: null,
+    skillLevel: "",
+    summary: "",
+    complete: null,
+    budget: null
+  });
+
+  function takeInContract(e) {
+    const { value, name } = e.target;
+    const newData = { ...contractData, [name]: value };
+    setContractData(newData);
+    // console.log(newData);
+  }
 
   function takeInData(e) {
     const { value, name } = e.target;
-    setProviderData({ ...providerData, [name]: value });
-    console.log(providerData);
+    const newData = { ...providerData, [name]: value };
+    setProviderData(newData);
+    // console.log(newData);
   }
 
-  function saveData() {
-    const {
-      providerName,
-      UKPRN,
-      firstName,
-      lastName,
-      accountNumber,
-      sortCode1,
-      sortCode2,
-      sortCode3,
-      phoneNumber,
-      email,
-      jobTitle
-    } = providerData;
-    const sortCode = `${sortCode1}-${sortCode2}-${sortCode3}`;
-    const mainContact = `${firstName} ${lastName}`;
-    fetch(`http://localhost:5000/providers`, {
+  function sendContractData() {
+    fetch(`http://localhost:5000/contracts`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({
-        providerName,
-        UKPRN,
-        sortCode,
-        accountNumber,
-        mainContact
-      })
+      body: JSON.stringify(contractData)
     })
       .then(response => response.json())
       .then(data => console.log(data.success))
-      .catch(err => console.log(err));
-
-    fetch(`http://localhost:5000/person`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        firstName,
-        lastName,
-        phoneNumber,
-        email,
-        jobTitle
-      })
-    })
-      .then(response => response.json())
-      .then(data => {
-        setSuccess(data.success);
-      })
       .catch(err => console.log(err));
   }
 
@@ -110,19 +98,6 @@ function App() {
       .then(data => setLoggedIn(data.success))
       .catch(err => console.log(err));
   }
-  function submitLoginInfo() {
-    const userData = { username: username, password: password };
-    fetch(`http://localhost:5000/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(userData)
-    })
-      .then(response => response.json())
-      .then(data => setLoggedIn(data.success), console.log(userData))
-      .catch(err => console.log(err));
-  }
 
   return (
     <div className="App">
@@ -131,7 +106,6 @@ function App() {
         {loggedIn ? (
           <>
             <img src={littleLogo} className="userImg" alt="user profile" />
-
             <p className="logoutButton">Logout</p>
           </>
         ) : (
@@ -146,7 +120,10 @@ function App() {
               <Login
                 handleUsername={handleUsername}
                 handlePassword={handlePassword}
-                submitLoginInfo={submitLoginInfo}
+                setLoggedIn={setLoggedIn}
+                loggedIn={loggedIn}
+                username={username}
+                password={password}
                 createUser={createUser}
                 Link={Link}
               />
@@ -169,20 +146,38 @@ function App() {
                 providerData={providerData}
               />
             </Route>
+            <Route path="/register4">
+              <ReviewSubmit
+                providerData={providerData}
+                setSuccess={setSuccess}
+                success={success}
+              />
+            </Route>
 
-            {success ? (
-              <Route path="/register4">
-                <Thanks providerName={providerData.providerName} />
-              </Route>
-            ) : (
-              <Route path="/register4">
-                <ReviewSubmit providerData={providerData} saveData={saveData} />
-              </Route>
-            )}
+
+        
 
             <Route path="/dashboard">
               <Dashboard />
             </Route>
+            <Route path="/thanks">
+              <Thanks providerName={providerData.providerName} />
+            </Route>
+            <Route path="/input-contract">
+              <ContractInput
+                takeInContract={takeInContract}
+                contractData={contractData}
+                sendContractData={sendContractData}
+              />
+            </Route>
+            <Route path="/home">
+              <LandingPage />
+            </Route>
+            <Route path="/contract-page">
+              <ContractPage />
+            </Route>
+            {/* <Redirect exact from="/" to="/home" /> */}
+
           </div>
         </Switch>
       </Router>

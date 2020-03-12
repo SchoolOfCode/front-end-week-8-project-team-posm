@@ -1,7 +1,8 @@
 import React from "react";
 import "./form.css";
+import { Link } from "react-router-dom";
 
-function ProviderSummary({ state }) {
+function ProviderSummary({ state, saveData }) {
   const {
     providerName,
     UKPRN,
@@ -20,15 +21,15 @@ function ProviderSummary({ state }) {
     <div className="summary">
       <h2>Summary</h2>
       <p>
-        provider: {providerName}
+        Provider: {providerName}
         <br />
-        pkurn: {UKPRN}
+        UKPRN: {UKPRN}
         <br />
         Contact Name: {firstName} {lastName}
         <br />
         Contact Number: {phoneNumber}
         <br />
-        email: {email}
+        Email: {email}
         <br />
         Job Title: {jobTitle}
         <br />
@@ -38,6 +39,14 @@ function ProviderSummary({ state }) {
         <br />
         Sort Code: {sortCode1}-{sortCode2}-{sortCode3}
       </p>
+      <section className="finalbuttons">
+        <Link to="/register3">
+          <button className="button">Back</button>
+        </Link>
+        <button type="submit" className="button" id="submit" onClick={saveData}>
+          Submit
+        </button>
+      </section>
     </div>
   );
 }

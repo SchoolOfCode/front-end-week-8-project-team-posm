@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./form.css";
+import Asset2 from "../../SVG/Asset2.svg";
 
 function ProviderDetails({ providerData, takeInData }) {
   return (
@@ -60,6 +61,7 @@ function ProviderDetails({ providerData, takeInData }) {
           <button className="button">Next</button>
         </Link>
       </section>
+      <img src={Asset2} className="progress-bar" alt="progress-bar" />
     </div>
   );
 }
