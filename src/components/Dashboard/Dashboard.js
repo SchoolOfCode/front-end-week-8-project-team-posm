@@ -19,16 +19,20 @@ function Dashboard() {
       <Searchbar input={input} handleSetInput={handleSetInput} />
       <div className="progress">
         <h3>Contracts In Progress</h3>
+        <br />
         <p>M</p>
         <p>F</p>
         <p>L</p>
+        <br />
 
         <ContractItem />
       </div>
-      <Link to="/input-contract">
-        <button className="contractButton">Add New Contract</button>
-      </Link>
-      <button className="contractButton">Payment Profile</button>
+      <div id="dashButtons">
+        <Link to="/input-contract">
+          <button className="contractButton">Add New Contract</button>
+        </Link>
+        <button className="contractButton">Payment Profile</button>
+      </div>
     </>
   );
 }

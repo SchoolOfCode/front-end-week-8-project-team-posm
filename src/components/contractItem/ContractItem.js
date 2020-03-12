@@ -44,7 +44,11 @@ function ContractItem({ children }) {
         onClick={handleClick3}
         style={{ backgroundColor: colors[currentColor3] }}
       ></span>
-      <p> - Company Name / Contract ID</p>
+      <span
+        class="dot"
+        style={{ backgroundColor: "white", border: "white solid 1px" }}
+      ></span>
+      <p> Company Name / Contract ID</p>
       {children}
     </>
   );

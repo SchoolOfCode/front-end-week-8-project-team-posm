@@ -34,7 +34,9 @@ function Login({
       <input placeholder="Username" onChange={handleUsername} /> <br />
       <input type="password" placeholder="Password" onChange={handlePassword} />
       <br />
-      <button onClick={submitLoginInfo}>Login</button>
+      <button onClick={submitLoginInfo} className="loginButton">
+        Login
+      </button>
     </div>
   );
 }
