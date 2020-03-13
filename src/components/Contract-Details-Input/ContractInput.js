@@ -16,14 +16,14 @@ function ContractInput({ takeInContract, contractData, sendContractData }) {
           name="providerName"
         ></input>
 
-        <label for="companyID">Provider ID:</label>
+        {/* <label for="companyID">Provider ID:</label>
         <input
           type="text"
           id="companyID"
           onChange={takeInContract}
           value={contractData.companyID}
           name="companyID"
-        ></input>
+        ></input> */}
 
         <label for="start-date">Start Date:</label>
         <input

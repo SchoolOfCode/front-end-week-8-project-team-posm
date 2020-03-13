@@ -26,8 +26,14 @@
 .contract {
   border: 2px solid black;
   border-radius: 12px;
-  width: 83.5vw;
+  width: 38vw;
   display: inline-block;
   padding: 10px;
   text-align: center;
+}
+
+#backToDash {
+  position: absolute;
+  left: 45%;
+  top: 80%;
 }
