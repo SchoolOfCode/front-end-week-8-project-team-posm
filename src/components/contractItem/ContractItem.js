@@ -57,13 +57,12 @@ function ContractItem({ children, provider_name, contract_id }) {
         style={{ backgroundColor: "white", border: "white solid 1px" }}
       ></span>
 
-      <span className="contract-name">
-        <Link to="/contract-page">
-          <p>
-            {provider_name} / {contract_id}
-          </p>
-        </Link>
-      </span>
+      <Link to="/contract-page">
+        <p className="contract-name">
+          {provider_name} / {contract_id}
+        </p>
+      </Link>
+
       <hr></hr>
 
       {children}
