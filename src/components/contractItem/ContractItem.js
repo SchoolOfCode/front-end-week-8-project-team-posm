@@ -34,17 +34,23 @@ function ContractItem({ children, provider_name, contract_id }) {
         class="dot"
         onClick={handleClick1}
         style={{ backgroundColor: colors[currentColor1] }}
-      ></span>
+      >
+        M
+      </span>
       <span
         class="dot"
         onClick={handleClick2}
         style={{ backgroundColor: colors[currentColor2] }}
-      ></span>
+      >
+        F
+      </span>
       <span
         class="dot"
         onClick={handleClick3}
         style={{ backgroundColor: colors[currentColor3] }}
-      ></span>
+      >
+        L
+      </span>
 
       <span
         class="dot"
@@ -58,6 +64,7 @@ function ContractItem({ children, provider_name, contract_id }) {
           </p>
         </Link>
       </span>
+      <hr></hr>
 
       {children}
     </>
