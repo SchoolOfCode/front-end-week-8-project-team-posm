@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ContractItem from "../contractItem/ContractItem";
 
-function Autocomplete({ input }) {
+function Autocomplete({ input, setInput }) {
   const [options, setOptions] = useState([]);
 
   useEffect(() => {
@@ -27,6 +27,7 @@ function Autocomplete({ input }) {
           <ContractItem
             provider_name={item.provider_name}
             contract_id={item.contract_id}
+            setInput={setInput}
           />
         );
       })}
