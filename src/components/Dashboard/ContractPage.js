@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./ContractPage.css";
 import Checkbox from "../checkbox/checkbox";
@@ -41,6 +42,11 @@ function ContractPage({ handleCheckboxChange, isChecked }) {
       <div className="contract" id="left">
         <p>Contract Document coming soon...</p>
       </div>
+      <Link to="/dashboard">
+        <button className="button" id="backToDash">
+          Back to Dashboard
+        </button>
+      </Link>
     </wrapper>
   );
 }
