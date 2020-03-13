@@ -58,6 +58,7 @@ function ContractItem({ provider_name, contract_id }) {
         style={{ backgroundColor: "white", border: "white solid 1px" }}
       ></span>
 
+
       <span className="contract-name">
         <Link to={`/contract-page/${contract_id}`}>
           <p>
@@ -66,6 +67,7 @@ function ContractItem({ provider_name, contract_id }) {
           </p>
         </Link>
       </span>
+
 
       <hr></hr>
 
