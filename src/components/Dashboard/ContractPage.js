@@ -39,7 +39,7 @@ function ContractPage({ handleCheckboxChange, isChecked }) {
         <p>Budget: {contractData.budget}</p>
       </div>
       <div className="contract" id="left">
-        <p>insert the populated contract here w a download button</p>
+        <p>Contract Document coming soon...</p>
       </div>
     </wrapper>
   );
