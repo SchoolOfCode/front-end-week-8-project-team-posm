@@ -8,7 +8,7 @@ function Autocomplete({ input, setInput }) {
     async function getData() {
       try {
         const res = await fetch(
-          `http://localhost:5000/contracts/${input ? `?search=` + input : ""}`
+          `http://localhost:5000/contracts/${input ? `?name=` + input : ""}`
         );
         const data = await res.json();
 
