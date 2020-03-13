@@ -3,10 +3,11 @@ import "./contractItem.css";
 import { Link } from "react-router-dom";
 const colors = ["red", "yellow", "green"];
 
-function ContractItem({ children, provider_name, contract_id }) {
+function ContractItem({ provider_name, contract_id }) {
   const [currentColor1, setColor1] = useState(0);
   const [currentColor2, setColor2] = useState(0);
   const [currentColor3, setColor3] = useState(0);
+
   function handleClick1() {
     if (currentColor1 < 2) {
       setColor1(currentColor1 + 1);
@@ -57,15 +58,19 @@ function ContractItem({ children, provider_name, contract_id }) {
         style={{ backgroundColor: "white", border: "white solid 1px" }}
       ></span>
 
-      <Link to="/contract-page">
-        <p className="contract-name">
-          {provider_name} / {contract_id}
-        </p>
-      </Link>
+
+      <span className="contract-name">
+        <Link to={`/contract-page/${contract_id}`}>
+          <p>
+            <span>{provider_name}</span> /
+            <span id="goToContract"> {contract_id}</span>
+          </p>
+        </Link>
+      </span>
+
 
       <hr></hr>
 
-      {children}
     </>
   );
 }

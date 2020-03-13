@@ -16,6 +16,12 @@
   display: inline-block;
   padding: 10px;
 }
+.summaryTitle {
+  margin-block-start: 0px;
+  font-size: medium;
+  text-align: center;
+  margin-top: 10px;
+}
 
 .contract {
   border: 2px solid black;
@@ -23,4 +29,5 @@
   width: 83.5vw;
   display: inline-block;
   padding: 10px;
+  text-align: center;
 }

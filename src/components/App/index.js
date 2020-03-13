@@ -165,7 +165,7 @@ function App() {
             <Route path="/home">
               <LandingPage />
             </Route>
-            <Route path="/contract-page">
+            <Route path="/contract-page/:contract_id">
               <ContractPage />
             </Route>
             {/* <Redirect exact from="/" to="/home" /> */}

@@ -25,8 +25,9 @@ function Dashboard() {
         <p>M </p>
         <p>F</p>
         <p>L</p>
-        <br /> */}
-        <Autocomplete input={input} />
+
+        <Autocomplete input={input} setInput={setInput} />
+
       </div>
 
       <div id="dashButtons">
