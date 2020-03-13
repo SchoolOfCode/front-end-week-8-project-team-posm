@@ -43,7 +43,7 @@ function ProviderDetails({ takeInData, providerData }) {
         <Link to="/register2">
           <button
             className="button"
-            style={{ color: "white", border: "white" }}
+            style={{ color: "white", border: "white", cursor: "auto" }}
           >
             Next
           </button>

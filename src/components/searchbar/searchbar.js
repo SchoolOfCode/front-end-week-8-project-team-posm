@@ -10,7 +10,7 @@ function Searchbar({ input, handleSetInput }) {
         onChange={handleSetInput}
         placeholder="Search"
         className="searchBar"
-      />
+      />{" "}
       <img className="searchIcon" alt="search icon" src={searchIcon} />
     </>
   );
