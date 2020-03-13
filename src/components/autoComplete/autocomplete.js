@@ -27,7 +27,6 @@ function Autocomplete({ input, setInput }) {
           <ContractItem
             provider_name={item.provider_name}
             contract_id={item.contract_id}
-            setInput={setInput}
           />
         );
       })}

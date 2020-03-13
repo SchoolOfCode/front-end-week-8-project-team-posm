@@ -21,13 +21,7 @@ function Dashboard() {
       <h1>Contracts In Progress</h1>
       <Searchbar input={input} handleSetInput={handleSetInput} />
       <div className="progress">
-        {/* <br />
-        <p>M </p>
-        <p>F</p>
-        <p>L</p>
-
         <Autocomplete input={input} setInput={setInput} />
-
       </div>
 
       <div id="dashButtons">
