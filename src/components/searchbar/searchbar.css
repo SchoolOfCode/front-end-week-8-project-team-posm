@@ -1,10 +1,14 @@
 .searchBar {
+  position: relative;
+  left: 17vw;
   text-align: center;
-  width: 75%;
+  width: 40%;
   border-radius: 10px;
 }
 
 .searchIcon {
+  position: relative;
+  left: 17vw;
   width: 30px;
   margin-left: 10%;
   float: left;

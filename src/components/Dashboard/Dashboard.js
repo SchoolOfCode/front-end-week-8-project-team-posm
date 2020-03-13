@@ -18,15 +18,14 @@ function Dashboard() {
 
   return (
     <>
+      <h1>Contracts In Progress</h1>
       <Searchbar input={input} handleSetInput={handleSetInput} />
       <div className="progress">
-        <h3>Contracts In Progress</h3>
-
-        <br />
-        <p>M</p>
+        {/* <br />
+        <p>M </p>
         <p>F</p>
         <p>L</p>
-        <br />
+        <br /> */}
         <Autocomplete input={input} />
       </div>
 
