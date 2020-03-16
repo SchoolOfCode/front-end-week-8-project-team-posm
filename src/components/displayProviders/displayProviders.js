@@ -4,7 +4,7 @@
 //   const [providers, setProviders] = useState([]);
 
 //   useEffect(() => {
-//     fetch(`http://localhost:5000/providers`)
+//     fetch(`${SERVER_URL}/providers`)
 //       .then(res => res.json())
 //       .then(data => {
 //         console.log({ data });
@@ -13,7 +13,7 @@
 //   }, []);
 
 //   //     async function getUserData() {
-//   //       const res = await fetch(`http://localhost:5000/providers`);
+//   //       const res = await fetch(`${SERVER_URL}/providers`);
 //   //       console.log(res);
 //   //       const data = await res.json();
 //   //       console.log(data);

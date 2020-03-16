@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import "./Login.css";
 import { Link } from "react-router-dom";
-
+import { SERVER_URL } from "../../config";
 function Login({
   handleUsername,
   handlePassword,
@@ -14,7 +14,7 @@ function Login({
   const history = useHistory();
   function submitLoginInfo() {
     const userData = { email: username, password: password };
-    fetch(`http://localhost:5000/login`, {
+    fetch(`${SERVER_URL}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

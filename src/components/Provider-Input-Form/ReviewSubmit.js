@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import ProviderSummary from "./ProviderSummary";
 import "./form.css";
 import Asset4 from "../../SVG/Asset4.svg";
+import { SERVER_URL } from "../../config";
 
 function ReviewSubmit({ providerData, setSuccess, success }) {
   const history = useHistory();
@@ -23,7 +24,7 @@ function ReviewSubmit({ providerData, setSuccess, success }) {
     } = providerData;
     const sortCode = `${sortCode1}-${sortCode2}-${sortCode3}`;
     const mainContact = `${firstName} ${lastName}`;
-    fetch(`http://localhost:5000/providers`, {
+    fetch(`${SERVER_URL}/providers`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -40,7 +41,7 @@ function ReviewSubmit({ providerData, setSuccess, success }) {
       .then(data => console.log(data.success))
       .catch(err => console.log(err));
 
-    fetch(`http://localhost:5000/persons`, {
+    fetch(`${SERVER_URL}/persons`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

@@ -10,9 +10,7 @@ function ContractPage({ handleCheckboxChange, isChecked }) {
   const { contract_id } = useParams();
   useEffect(() => {
     async function goToContract() {
-      const res = await fetch(
-        `http://localhost:5000/contracts?id=${contract_id}`
-      );
+      const res = await fetch(`${SERVER_URL}/contracts?id=${contract_id}`);
       const data = await res.json();
       console.log(data);
       setContractData(data);

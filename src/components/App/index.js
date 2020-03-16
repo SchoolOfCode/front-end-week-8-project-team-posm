@@ -21,6 +21,8 @@ import ContractInput from "../Contract-Details-Input/ContractInput";
 import LandingPage from "../LandingPage/LandingPage";
 import ContractPage from "../Dashboard/ContractPage";
 
+import { SERVER_URL } from "../../config";
+
 function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -67,7 +69,7 @@ function App() {
   }
 
   function sendContractData() {
-    fetch(`http://localhost:5000/contracts`, {
+    fetch(`${URL}/contracts`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -87,7 +89,7 @@ function App() {
   }
   function createUser() {
     const userData = { username: username, password: password };
-    fetch(`http://localhost:5000/users`, {
+    fetch(`${SERVER_URL}/users`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
