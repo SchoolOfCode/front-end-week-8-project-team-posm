@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import "./ContractPage.css";
 import Checkbox from "../checkbox/checkbox";
-
+import { SERVER_URL } from "../../config";
 function ContractPage({ handleCheckboxChange, isChecked }) {
   const [contractData, setContractData] = useState([]);
   const { contract_id } = useParams();
